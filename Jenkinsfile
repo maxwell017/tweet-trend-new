@@ -22,10 +22,10 @@ pipeline {
 
         stage('SonarQube analysis') {
     environment {
-      scannerHome = tool 'maxwell01-sonarQube-server'
+      scannerHome = tool 'maxwell01-sonarQube-scanner'
     }
     steps{
-    withSonarQubeEnv('maxwell01-sonarQube-scanner') { // If you have configured more than one global server connection, you can specify its name
+    withSonarQubeEnv('maxwell01-sonarQube-server') { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
     }
