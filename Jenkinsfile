@@ -1,5 +1,5 @@
 def registry = 'https://maxwell6051.jfrog.io'
- def imageName = 'maxwell6051.jfrog.io/artifactory/maxwell-docker-local/ttrend'
+ def imageName = 'maxwell6051.jfrog.io/maxwell-docker-local/ttrend'
    def version   = '2.1.2'
 pipeline {
     agent {
