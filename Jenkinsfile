@@ -28,13 +28,13 @@ environment {
          steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:" Jenkins-access-token"
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"artifact-cred"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
                             {
                               "pattern": "jarstaging/(*)",
-                              "target": "maxw-libs-release/{1}",
+                              "target": "maxw-libs-release-local/",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
